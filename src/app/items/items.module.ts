@@ -12,11 +12,13 @@ import { FilmsComponent } from './films/films.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { SpeciesComponent } from './species/species.component';
+import { MatCardModule } from '@angular/material/card'
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     // ItemInfoComponent
-  
+
     PeopleComponent,
     PlanetsComponent,
     FilmsComponent,
@@ -26,11 +28,15 @@ import { SpeciesComponent } from './species/species.component';
   ],
   imports: [
     CommonModule,
-    ItemsRoutingModule
+    ItemsRoutingModule,
+    MatCardModule,
+    MatRippleModule
   ],
   exports: [
     // ItemInfoComponent,
-    MaterialModule
+    MaterialModule,
+    MatCardModule,
+    MatRippleModule
   ],
 })
 
