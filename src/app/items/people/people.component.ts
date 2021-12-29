@@ -61,7 +61,7 @@ export class PeopleComponent implements OnInit {
 
       this.starshipsUrl = data['starships'];
       this.starshipsUrl.forEach((starship) => {
-        this.getSpeciesInfo(starship)
+        this.getStarshipsInfo(starship)
       });
 
       this.vehiclesUrl = data['vehicles'];

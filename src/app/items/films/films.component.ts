@@ -44,17 +44,17 @@ export class FilmsComponent implements OnInit {
 
       this.starshipsUrl = data['starships'];
       this.starshipsUrl.forEach((starship) => {
-        this.getSpeciesInfo(starship)
+        this.getStarshipsInfo(starship)
       });
 
-      this.vehiclesUrl = data['starships'];
+      this.vehiclesUrl = data['vehicles'];
       this.vehiclesUrl.forEach((vehicle) => {
         this.getVehiclesInfo(vehicle)
       });
 
-      this.peopleUrl = data['starships'];
+      this.peopleUrl = data['people'];
       this.peopleUrl.forEach((people) => {
-        this.getVehiclesInfo(people)
+        this.getPeopleInfo(people)
       });
 
     });
