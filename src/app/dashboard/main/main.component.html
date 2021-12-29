@@ -1,0 +1,9 @@
+<div class="main-container">
+  <div class="main-container-content">
+    <div class="main-container-content-category" *ngFor="let category of categoriesValues" [routerLink]="['categories', category]">
+      <div class="main-container-content-category-title">
+        {{ category }}
+      </div>
+    </div>
+  </div>
+</div>

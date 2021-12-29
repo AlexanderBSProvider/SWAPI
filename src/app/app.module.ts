@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardModule } from "./dashboard/dashboard.module";
+
+import { HttpClientModule }   from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ItemsRoutingModule} from "./items/items-routing.module";
+import {ItemsModule} from "./items/items.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +16,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ItemsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
