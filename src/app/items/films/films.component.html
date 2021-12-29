@@ -3,39 +3,39 @@
   <div class="item-container-content">
     <div class="item-container-content-info" *ngFor="let item of ((filmsInfo | async) | keyvalue); index as i">
 
-      <ng-container *ngIf="item.key !== 'characters' && item.key !== 'planets' && item.key !== 'species' && item.key !== 'starships' && item.key !== 'vehicles'">
+      <ng-container *ngIf="item.key != 'characters' && item.key != 'planets' && item.key != 'species' && item.key != 'starships' && item.key != 'vehicles'">
         {{item.key}}  :  {{item.value}}
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'characters'">
+      <ng-container *ngIf="item.key == 'characters'">
         characters :
         <div *ngFor="let people of peopleInfo" [routerLink]="'../../people/' + people.number">
           {{ people.name }}
         </div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'planets'">
+      <ng-container *ngIf="item.key == 'planets'">
         planets :
         <div [routerLink]="'../../planets/' + planetsInfo.number">
           {{ planetsInfo.name }}
         </div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'species'">
+      <ng-container *ngIf="item.key == 'species'">
         species :
         <div *ngFor="let specie of speciesInfo" [routerLink]="'../../species/' + specie.number">
           {{ specie.name }}
         </div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'starships'">
+      <ng-container *ngIf="item.key == 'starships'">
         starships :
         <div *ngFor="let starship of starshipsInfo" [routerLink]="'../../starships/' + starship.number">
           {{ starship.name }}
         </div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'vehicles'">
+      <ng-container *ngIf="item.key == 'vehicles'">
         vehicles :
         <div *ngFor="let vehicle of vehiclesInfo" [routerLink]="'../../vehicles/' + vehicle.number">
           {{ vehicle.name }}

@@ -1,7 +1,7 @@
 <div class="categories-container">
   <div class="categories-container-content">
     <div class="categories-container-content-category" *ngFor="let item of (categoryInfo | async)?.results; index as i">
-      <div class="categories-container-content-category-title" [routerLink]="[currentPage + i ]">
+      <div class="categories-container-content-category-title" [routerLink]="[currentPage + i + 1]">
         {{ item.name }}
       </div>
     </div>
