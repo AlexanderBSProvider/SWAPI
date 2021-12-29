@@ -34,7 +34,6 @@ export class CategoriesComponent implements OnInit {
     }
   }
 
-
   getAdditionalParams () {
   }
 
@@ -54,6 +53,26 @@ export class CategoriesComponent implements OnInit {
 
     urlParamsAdditional = this.urlParamsAdditional + (pageInfo['pageIndex'] + 1);
 
-    this.categoryDataService.getCategoryInfo(this.urlParams, urlParamsAdditional).subscribe();
+    this.categoryDataService.getCategoryInfo(this.urlParams, urlParamsAdditional).subscribe((data)=>{
+      console.log(data,'this');
+    });
+  }
+
+  getIndexFromUrl (link:any) {
+
+    let linkId = link.split('/');
+    linkId = linkId[linkId.length - 2];
+
+    return linkId
+  }
+
+  isFilms (item:any) {
+    let keys = Object.keys(item);
+    // console.log(keys[0] == 'title')
+    if (keys[0] == 'title') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

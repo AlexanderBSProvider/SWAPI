@@ -1,6 +1,25 @@
 .films-container {
   background-color: white;
+  //width: 50%;
   display: flex;
+  //width: 100%;
   flex-direction: column;
-  row-gap: 10px;
+  justify-content: center;
+  align-content: center;
+  width: 800px;
+  //align-content: center;
+  //row-gap: 10px;
+
+  &-content {
+    //width: 400px;
+    //align-self: center;
+    //width: 50%;
+    justify-self: center;
+    //padding: 20px 0 0 20px;
+
+    &-item {
+      margin: 15px 0 0 10px;
+
+    }
+  }
 }
