@@ -1,0 +1,30 @@
+.app-container {
+  //height: 900px;
+  height: 100vh;
+  height: 100%;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(32,32,88,1) 28%, rgba(0,212,255,1) 100%);
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
+
+  &-button {
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+
+    &-title{
+    }
+  }
+
+  &-content {
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: space-between;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="planet-container">
+
+  <div class="item-container-content">
+    <div class="item-container-content-info" *ngFor="let item of ((planetInfo | async) | keyvalue); index as i">
+      <ng-container *ngIf="item.key !== 'films' && item.key !== 'residents'">
+        {{item.key}}  :  {{item.value}}
+      </ng-container>
+
+      <ng-container *ngIf="item.key === 'films'">
+        films :
+        <div *ngFor="let film of filmsInfo" [routerLink]="'../../films/' + film.number">
+          {{ film.name }}
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="item.key === 'residents'">
+        residents :
+        <div *ngFor="let resident of peopleInfo" [routerLink]="'../../people/' + resident.number">
+          {{ resident.name }}
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>
