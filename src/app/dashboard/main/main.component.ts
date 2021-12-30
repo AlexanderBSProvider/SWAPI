@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   categoriesValues = [
-    'films',
-    'people',
-    'planets',
-    'starships',
-    'vehicles',
-    'species'
+    'FILMS',
+    'PEOPLE',
+    'PLANETS',
+    'STARSHIPS',
+    'VEHICLES',
+    'SPECIES'
   ]
 
   constructor() { }

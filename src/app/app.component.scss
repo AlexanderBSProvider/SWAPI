@@ -3,16 +3,21 @@
   //height: 100vh;
   height: 100%;
   width: 100%;
-  background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(32,32,88,1) 28%, rgba(0,212,255,1) 100%);
+  //overflow: auto;
+
+  //background: rgb(2,0,36);
+  //background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(32,32,88,1) 28%, rgba(0,212,255,1) 100%);
+  background-image: url(../assets/images/spacemain2.jpeg);
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
 
   &-button {
+    margin-top: 5px;
     width: 200px;
     height: 40px;
-    background-color: white;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -68,7 +68,7 @@ export class CategoriesComponent implements OnInit {
 
   isFilms (item:any) {
     let keys = Object.keys(item);
-    // console.log(keys[0] == 'title')
+    
     if (keys[0] == 'title') {
       return true;
     } else {
