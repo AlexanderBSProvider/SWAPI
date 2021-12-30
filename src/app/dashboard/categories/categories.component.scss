@@ -18,7 +18,9 @@
     padding: 100px 0 0px 0;
 
     &-category {
-      background-color: white;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
       width: 200px;
       height: 40px;
       cursor: pointer;

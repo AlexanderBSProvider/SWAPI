@@ -1,33 +1,47 @@
 <div class="species-container">
 
-  <div class="item-container-content">
-    <div class="item-container-content-info" *ngFor="let item of ((speciesInfo | async) | keyvalue); index as i">
+  <div class="species-container-content">
+    <ng-container *ngFor="let item of ((speciesInfo | async) | keyvalue); index as i">
 
-      <ng-container *ngIf="item.key !== 'films' && item.key !== 'people' && item.key !== 'homeworld'">
-        {{item.key}}  :  {{item.value}}
+      <ng-container *ngIf="item.key !== 'films' && item.key !== 'species' && item.key !== 'homeworld'">
+        <div class="species-container-content-items">
+          <div class="species-container-content-items-main">
+            {{item.key}}  :  {{item.value}}
+          </div>
+        </div>
+        <div class="separator"></div>
       </ng-container>
 
       <ng-container *ngIf="item.key === 'films'">
-        films :
-        <div *ngFor="let film of filmsInfo" [routerLink]="'../../films/' + film.number">
-          {{ film.name }}
+        <div class="species-container-content-items">
+          films :
+          <div class="species-container-content-items-linked" *ngFor="let film of filmsInfo" [routerLink]="'../../films/' + film.number">
+            {{ film.name }}
+          </div>
         </div>
+        <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'people'">
-        people :
-        <div *ngFor="let resident of peopleInfo" [routerLink]="'../../people/' + resident.number">
-          {{ resident.name }}
+      <ng-container *ngIf="item.key === 'species'">
+        <div class="species-container-content-items">
+          species :
+          <div class="species-container-content-items-linked" *ngFor="let resident of peopleInfo" [routerLink]="'../../species/' + resident.number">
+            {{ resident.name }}
+          </div>
         </div>
+        <div class="separator"></div>
       </ng-container>
 
       <ng-container *ngIf="item.key === 'homeworld'">
-        homeworld :
-        <div  [routerLink]="'../../planets/' + planetsInfo.number">
-          {{ planetsInfo.name }}
+        <div class="species-container-content-items">
+          homeworld :
+          <div class="species-container-content-items-linked" [routerLink]="'../../planets/' + planetsInfo.number">
+            {{ planetsInfo.name }}
+          </div>
         </div>
+        <div class="separator"></div>
       </ng-container>
 
-    </div>
+    </ng-container>
   </div>
 </div>

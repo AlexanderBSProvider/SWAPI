@@ -46,7 +46,6 @@ export class SpeciesComponent implements OnInit {
 
       // this.planetUrl = data.people;
       this.getPlanetInfo(data.homeworld);
-      console.log(data.homeworld,'data.homeworld')
     });
   }
 
@@ -90,7 +89,6 @@ export class SpeciesComponent implements OnInit {
         number: linkId,
       }
       this.planetsInfo = planetInfo;
-      console.log(this.planetsInfo, 'planetsInfo')
     });
   }
 }
