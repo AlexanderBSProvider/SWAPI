@@ -1,25 +1,47 @@
 .films-container {
-  background-color: white;
-  //width: 50%;
+  //height: 100%;
+  //overflow: auto;
+  color: white;
+  text-shadow: 3px 3px 3px  black;
+  margin: 20px 400px 0 400px;
   display: flex;
-  //width: 100%;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 800px;
-  //align-content: center;
-  //row-gap: 10px;
+  align-items: center;
+  row-gap: 15px;
 
   &-content {
-    //width: 400px;
-    //align-self: center;
-    //width: 50%;
-    justify-self: center;
-    //padding: 20px 0 0 20px;
+    //background-image: url(../../../assets/images/spacemain.jpg) 0.6;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 
-    &-item {
-      margin: 15px 0 0 10px;
+    &-items {
+      padding: 10px 0 10px 0;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 7px;
+      height: 100%;
 
+      &-linked {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: 550;
+      }
     }
   }
+}
+
+.separator {
+  border-bottom: 1px solid white ;
+  width: 100%;
 }

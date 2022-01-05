@@ -28,12 +28,12 @@ export class VehiclesComponent implements OnInit {
     this.urlParams = 'vehicles' + '/' + this.activatedRoute.snapshot.params['itemId'];
     this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((data:any ) => {
 
-      this.filmsUrl = data.films;
+      this.filmsUrl = data['films'];
       this.filmsUrl.forEach((film) => {
         this.getFilmInfo(film)
       });
 
-      this.peopleUrl = data.pilots;
+      this.peopleUrl = data['pilots'];
       this.peopleUrl.forEach((people) => {
         this.getPeopleInfo(people)
       });

@@ -4,8 +4,8 @@
     <ng-container *ngFor="let item of ((vehiclesInfo | async) | keyvalue); index as i">
 
       <ng-container *ngIf="item.key !== 'films' && item.key !== 'pilots' && item.key !== 'url'">
-        <div class="vehicles--container-content-items">
-          <div class="vehicles--container-content-items-main">
+        <div class="vehicles-container-content-items">
+          <div class="vehicles-container-content-items-main">
             {{item.key}}  :  {{item.value}}
           </div>
         </div>
@@ -31,7 +31,6 @@
         </div>
         <div class="separator"></div>
       </ng-container>
-
 <!--    </div>-->
     </ng-container>
   </div>
