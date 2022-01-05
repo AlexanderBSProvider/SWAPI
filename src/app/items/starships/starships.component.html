@@ -1,10 +1,7 @@
 <div class="starships-container">
-
   <div class="starships-container-content">
-
     <ng-container *ngFor="let item of ((starshipsInfo | async) | keyvalue); index as i">
-
-      <ng-container *ngIf="item.key !== 'films' && item.key !== 'pilots' && item.key !== 'url'">
+      <ng-container *ngIf="item.key != 'films' && item.key != 'pilots' && item.key != 'url'">
         <div class="starships-container-content-items">
           <div class="starships-container-content-items-main">
             {{item.key}}  :  {{item.value}}
@@ -13,7 +10,7 @@
         <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'films'">
+      <ng-container *ngIf="item.key == 'films'">
         <div class="starships-container-content-items">
           films :
           <div class="starships-container-content-items-linked" *ngFor="let film of filmsInfo" [routerLink]="'../../films/' + film.number">
@@ -23,18 +20,15 @@
         <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'pilots'">
+      <ng-container *ngIf="item.key == 'pilots'">
         <div class="starships-container-content-items">
           pilots :
-          <div class="starships-container-content-items-linked" *ngFor="let pilot of peopleInfo" [routerLink]="'../../starships/' + pilot.number">
+          <div class="starships-container-content-items-linked" *ngFor="let pilot of peopleInfo" [routerLink]="'../../people/' + pilot.number">
             {{ pilot.name }}
           </div>
         </div>
         <div class="separator"></div>
       </ng-container>
-
     </ng-container>
-
   </div>
-
 </div>

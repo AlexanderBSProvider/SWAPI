@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryDataService} from "../../services/category-data.service";
-import {ActivatedRoute} from "@angular/router";
-import {BehaviorSubject} from "rxjs";
+import { ActivatedRoute } from "@angular/router";
+import { BehaviorSubject } from "rxjs";
+
+import { CategoryDataService } from "../../shared/services/category-data.service";
 
 @Component({
   selector: 'app-films',
@@ -27,45 +28,44 @@ export class FilmsComponent implements OnInit {
   peopleUrl = [];
   peopleInfo:any = [];
 
-  constructor(private categoryDataService: CategoryDataService,
-              private activatedRoute: ActivatedRoute) { }
-
   filmsInfo: BehaviorSubject<any> = this.categoryDataService.categoryInfo$;
   filmsReferences: BehaviorSubject<any> = this.categoryDataService.defaultInfo$;
 
+  constructor(private categoryDataService: CategoryDataService,
+              private activatedRoute: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.urlParams = 'films' + '/' + this.activatedRoute.snapshot.params['itemId'];
-    this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((data:any ) => {
+    this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((itemInfo:any) => {
 
-      this.speciesUrl = data['species'];
+      this.speciesUrl = itemInfo['species'];
       this.speciesUrl.forEach((specie) => {
-        this.getSpeciesInfo(specie)
+        this.getSpeciesInfo(specie);
       });
 
-      this.starshipsUrl = data['starships'];
+      this.starshipsUrl = itemInfo['starships'];
       this.starshipsUrl.forEach((starship) => {
-        this.getStarshipsInfo(starship)
+        this.getStarshipsInfo(starship);
       });
 
-      this.vehiclesUrl = data['vehicles'];
+      this.vehiclesUrl = itemInfo['vehicles'];
       this.vehiclesUrl.forEach((vehicle) => {
-        this.getVehiclesInfo(vehicle)
+        this.getVehiclesInfo(vehicle);
       });
 
-      this.peopleUrl = data['people'];
+      this.peopleUrl = itemInfo['characters'];
       this.peopleUrl.forEach((people) => {
-        this.getPeopleInfo(people)
+        this.getPeopleInfo(people);
       });
 
-      this.planetsUrl = data['planets'];
+      this.planetsUrl = itemInfo['planets'];
       this.planetsUrl.forEach((planet) => {
-        this.getPlanetsInfo(planet)
+        this.getPlanetsInfo(planet);
       });
-
     });
   }
 
-  getPlanetsInfo (link:any) {
+  getPlanetsInfo(link:any) {
     this.categoryDataService.getDefaultInfo(link).subscribe((data:any) => {
 
       let linkId = link.split('/');
@@ -80,7 +80,7 @@ export class FilmsComponent implements OnInit {
     });
   }
 
-  getSpeciesInfo (link:any) {
+  getSpeciesInfo(link:any) {
     this.categoryDataService.getDefaultInfo(link).subscribe((data:any) => {
 
       let linkId = link.split('/');
@@ -95,7 +95,7 @@ export class FilmsComponent implements OnInit {
     });
   }
 
-  getStarshipsInfo (link:any) {
+  getStarshipsInfo(link:any) {
     this.categoryDataService.getDefaultInfo(link).subscribe((data:any) => {
 
       let linkId = link.split('/');
@@ -110,7 +110,7 @@ export class FilmsComponent implements OnInit {
     });
   }
 
-  getVehiclesInfo (link:any) {
+  getVehiclesInfo(link:any) {
     this.categoryDataService.getDefaultInfo(link).subscribe((data:any) => {
 
       let linkId = link.split('/');

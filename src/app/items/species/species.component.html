@@ -1,10 +1,7 @@
 <div class="species-container">
-
   <div class="species-container-content">
-
     <ng-container *ngFor="let item of ((speciesInfo | async) | keyvalue); index as i">
-
-      <ng-container *ngIf="item.key !== 'films' && item.key !== 'people' && item.key !== 'homeworld' && item.key !== 'url'">
+      <ng-container *ngIf="item.key != 'films' && item.key != 'people' && item.key != 'homeworld' && item.key != 'url'">
         <div class="species-container-content-items">
           <div class="species-container-content-items-main">
             {{item.key}}  :  {{item.value}}
@@ -13,7 +10,7 @@
         <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'films'">
+      <ng-container *ngIf="item.key == 'films'">
         <div class="species-container-content-items">
           films :
           <div class="species-container-content-items-linked" *ngFor="let film of filmsInfo" [routerLink]="'../../films/' + film.number">
@@ -23,7 +20,7 @@
         <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'people'">
+      <ng-container *ngIf="item.key == 'people'">
         <div class="species-container-content-items">
           people :
           <div class="species-container-content-items-linked" *ngFor="let resident of peopleInfo" [routerLink]="'../../species/' + resident.number">
@@ -33,7 +30,7 @@
         <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'homeworld'">
+      <ng-container *ngIf="item.key == 'homeworld'">
         <div class="species-container-content-items">
           homeworld :
           <div class="species-container-content-items-linked" [routerLink]="'../../planets/' + planetsInfo.number">
@@ -42,9 +39,6 @@
         </div>
         <div class="separator"></div>
       </ng-container>
-
     </ng-container>
-
   </div>
-
 </div>

@@ -3,13 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from "./main/main.component";
 import { CategoriesComponent } from "./categories/categories.component";
-import { ItemInfoComponent} from "./item-info/item-info.component";
-import {FilmsComponent} from "../items/films/films.component";
-import {PeopleComponent} from "../items/people/people.component";
-import {PlanetsComponent} from "../items/planets/planets.component";
-import {StarshipsComponent} from "../items/starships/starships.component";
-import {VehiclesComponent} from "../items/vehicles/vehicles.component";
-import {SpeciesComponent} from "../items/species/species.component";
+import { FilmsComponent } from "../items/films/films.component";
+import { PeopleComponent } from "../items/people/people.component";
+import { PlanetsComponent } from "../items/planets/planets.component";
+import { StarshipsComponent } from "../items/starships/starships.component";
+import { VehiclesComponent } from "../items/vehicles/vehicles.component";
+import { SpeciesComponent } from "../items/species/species.component";
 
 const routes: Routes = [
   {

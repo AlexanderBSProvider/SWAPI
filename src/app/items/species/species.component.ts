@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryDataService} from "../../services/category-data.service";
-import {ActivatedRoute} from "@angular/router";
-import {BehaviorSubject} from "rxjs";
+import { ActivatedRoute } from "@angular/router";
+import { BehaviorSubject } from "rxjs";
+
+import { CategoryDataService } from "../../shared/services/category-data.service";
 
 @Component({
   selector: 'app-species',
@@ -24,27 +25,27 @@ export class SpeciesComponent implements OnInit {
     number: 0,
   };
 
-  constructor(private categoryDataService: CategoryDataService,
-              private activatedRoute: ActivatedRoute) { }
-
   speciesInfo: BehaviorSubject<any> = this.categoryDataService.categoryInfo$;
   speciesReferences: BehaviorSubject<any> = this.categoryDataService.defaultInfo$;
 
+  constructor(private categoryDataService: CategoryDataService,
+              private activatedRoute: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.urlParams = 'species' + '/' + this.activatedRoute.snapshot.params['itemId'];
-    this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((data:any ) => {
+    this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((itemInfo:any ) => {
 
-      this.filmsUrl = data.films;
+      this.filmsUrl = itemInfo.films;
       this.filmsUrl.forEach((film) => {
-        this.getFilmInfo(film)
+        this.getFilmInfo(film);
       });
 
-      this.peopleUrl = data.people;
+      this.peopleUrl = itemInfo.people;
       this.peopleUrl.forEach((people) => {
-        this.getPeopleInfo(people)
+        this.getPeopleInfo(people);
       });
 
-      this.getPlanetInfo(data.homeworld);
+      this.getPlanetInfo(itemInfo.homeworld);
     });
   }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryDataService} from "../../services/category-data.service";
-import {ActivatedRoute} from "@angular/router";
-import {BehaviorSubject} from "rxjs";
+import { ActivatedRoute } from "@angular/router";
+import { BehaviorSubject } from "rxjs";
+
+import { CategoryDataService } from "../../shared/services/category-data.service";
 
 @Component({
   selector: 'app-vehicles',
@@ -18,24 +19,24 @@ export class VehiclesComponent implements OnInit {
   peopleUrl = [];
   peopleInfo:any = [];
 
-  constructor(private categoryDataService: CategoryDataService,
-              private activatedRoute: ActivatedRoute) { }
-
   vehiclesInfo: BehaviorSubject<any> = this.categoryDataService.categoryInfo$;
   vehiclesReferences: BehaviorSubject<any> = this.categoryDataService.defaultInfo$;
 
+  constructor(private categoryDataService: CategoryDataService,
+              private activatedRoute: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.urlParams = 'vehicles' + '/' + this.activatedRoute.snapshot.params['itemId'];
-    this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((data:any ) => {
+    this.categoryDataService.getCategoryInfo(this.urlParams).subscribe((itemInfo:any ) => {
 
-      this.filmsUrl = data['films'];
+      this.filmsUrl = itemInfo['films'];
       this.filmsUrl.forEach((film) => {
-        this.getFilmInfo(film)
+        this.getFilmInfo(film);
       });
 
-      this.peopleUrl = data['pilots'];
+      this.peopleUrl = itemInfo['pilots'];
       this.peopleUrl.forEach((people) => {
-        this.getPeopleInfo(people)
+        this.getPeopleInfo(people);
       });
     });
   }
