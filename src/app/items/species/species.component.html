@@ -3,7 +3,7 @@
   <div class="species-container-content">
     <ng-container *ngFor="let item of ((speciesInfo | async) | keyvalue); index as i">
 
-      <ng-container *ngIf="item.key !== 'films' && item.key !== 'species' && item.key !== 'homeworld'">
+      <ng-container *ngIf="item.key !== 'films' && item.key !== 'people' && item.key !== 'homeworld' && item.key !== 'url'">
         <div class="species-container-content-items">
           <div class="species-container-content-items-main">
             {{item.key}}  :  {{item.value}}
@@ -22,9 +22,9 @@
         <div class="separator"></div>
       </ng-container>
 
-      <ng-container *ngIf="item.key === 'species'">
+      <ng-container *ngIf="item.key === 'people'">
         <div class="species-container-content-items">
-          species :
+          people :
           <div class="species-container-content-items-linked" *ngFor="let resident of peopleInfo" [routerLink]="'../../species/' + resident.number">
             {{ resident.name }}
           </div>

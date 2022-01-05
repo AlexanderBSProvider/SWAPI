@@ -13,8 +13,6 @@
         <div class="separator"></div>
       </ng-container>
 
-
-
         <ng-container *ngIf="item.key === 'films'">
           <div class="people-container-content-items">
             films :
@@ -36,8 +34,6 @@
           <div class="separator"></div>
         </ng-container>
 
-
-
       <ng-container *ngIf="item.key === 'starships'">
         <div class="people-container-content-items">
           starships :
@@ -54,7 +50,6 @@
             <div class="people-container-content-items-linked" *ngFor="let specie of speciesInfo" [routerLink]="'../../species/' + specie.number">
               {{ specie.name }}
             </div>
-
         </div>
         <div class="separator"></div>
       </ng-container>

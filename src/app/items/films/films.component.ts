@@ -57,10 +57,15 @@ export class FilmsComponent implements OnInit {
         this.getPeopleInfo(people)
       });
 
+      this.planetsUrl = data['planets'];
+      this.planetsUrl.forEach((planet) => {
+        this.getPlanetsInfo(planet)
+      });
+
     });
   }
 
-  getPlanetInfo (link:any) {
+  getPlanetsInfo (link:any) {
     this.categoryDataService.getDefaultInfo(link).subscribe((data:any) => {
 
       let linkId = link.split('/');

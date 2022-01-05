@@ -1,46 +1,67 @@
 <div class="films-container">
 
-    <div class="films-container-content" *ngFor="let item of ((filmsInfo | async) | keyvalue); index as i">
+    <div class="films-container-content">
+      <ng-container *ngFor="let item of ((filmsInfo | async) | keyvalue); index as i">
 
-      <div *ngIf="item.key != 'characters' && item.key != 'planets' && item.key != 'species' && item.key != 'starships' && item.key != 'vehicles'">
-        {{item.key}}  :  {{item.value}}
-      </div>
+        <ng-container *ngIf="item.key != 'characters' && item.key != 'planets' && item.key != 'species' && item.key != 'starships' && item.key != 'vehicles' && item.key != 'url'">
+          <div class="films-container-content-items">
+            <div class="films-container-content-items-main">
+              {{item.key}}  :  {{item.value}}
+            </div>
+          </div>
+          <div class="separator"></div>
+        </ng-container>
 
-      <ng-container *ngIf="item.key == 'characters'">
-        characters :
-        <div class="films-container-content-item" *ngFor="let people of peopleInfo" [routerLink]="'../../people/' + people.number">
-          {{ people.name }}
-        </div>
+        <ng-container *ngIf="item.key === 'characters'">
+          <div class="film-container-content-items">
+            characters :
+            <div class="film-container-content-items-linked" *ngFor="let films of peopleInfo" [routerLink]="'../../films/' + films.number">
+              {{ films.name }}
+            </div>
+          </div>
+          <div class="separator"></div>
+        </ng-container>
+
+        <ng-container *ngIf="item.key === 'planets'">
+          <div class="films-container-content-items">
+            planets :
+            <div class="films-container-content-items-linked" *ngFor="let planet of planetsInfo" [routerLink]="'../../planets/' + planetsInfo.number">
+              {{ planet.name }}
+            </div>
+          </div>
+          <div class="separator"></div>
+        </ng-container>
+
+        <ng-container *ngIf="item.key === 'species'">
+          <div class="films-container-content-items">
+            species :
+            <div class="films-container-content-items-linked" *ngFor="let specie of speciesInfo" [routerLink]="'../../species/' + specie.number">
+              {{ specie.name }}
+            </div>
+          </div>
+          <div class="separator"></div>
+        </ng-container>
+
+        <ng-container *ngIf="item.key === 'starships'">
+          <div class="films-container-content-items">
+            starships :
+            <div class="films-container-content-items-linked" *ngFor="let starship of starshipsInfo" [routerLink]="'../../starships/' + starship.number">
+              {{ starship.name }}
+            </div>
+          </div>
+          <div class="separator"></div>
+        </ng-container>
+
+        <ng-container *ngIf="item.key === 'vehicles'">
+          <div class="films-container-content-items">
+            vehicles :
+            <div class="films-container-content-items-linked" *ngFor="let vehicle of vehiclesInfo" [routerLink]="'../../vehicles/' + vehicle.number">
+              {{ vehicle.name }}
+            </div>
+            <div class="separator"></div>
+          </div>
+        </ng-container>
+
       </ng-container>
-
-      <ng-container *ngIf="item.key == 'planets'">
-        planets :
-        <div class="films-container-content-item" [routerLink]="'../../planets/' + planetsInfo.number">
-          {{ planetsInfo.name }}
-        </div>
-      </ng-container>
-
-      <ng-container *ngIf="item.key == 'species'">
-        species :
-        <div class="films-container-content-item" *ngFor="let specie of speciesInfo" [routerLink]="'../../species/' + specie.number">
-          {{ specie.name }}
-        </div>
-      </ng-container>
-
-      <ng-container *ngIf="item.key == 'starships'">
-        starships :
-        <div class="films-container-content-item" *ngFor="let starship of starshipsInfo" [routerLink]="'../../starships/' + starship.number">
-          {{ starship.name }}
-        </div>
-      </ng-container>
-
-      <ng-container *ngIf="item.key == 'vehicles'">
-        vehicles :
-        <div class="films-container-content-item" *ngFor="let vehicle of vehiclesInfo" [routerLink]="'../../vehicles/' + vehicle.number">
-          {{ vehicle.name }}
-        </div>
-      </ng-container>
-
     </div>
-
 </div>
