@@ -44,7 +44,6 @@ export class SpeciesComponent implements OnInit {
         this.getPeopleInfo(people)
       });
 
-      // this.planetUrl = data.people;
       this.getPlanetInfo(data.homeworld);
     });
   }
@@ -74,6 +73,7 @@ export class SpeciesComponent implements OnInit {
         name: data.name,
         number: linkId,
       }
+
       this.peopleInfo.push(peopleInfo);
     });
   }
@@ -88,6 +88,7 @@ export class SpeciesComponent implements OnInit {
         name: data.name,
         number: linkId,
       }
+
       this.planetsInfo = planetInfo;
     });
   }

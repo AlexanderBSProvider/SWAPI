@@ -5,6 +5,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaterialModule } from "../shared/material/material.module";
 import { ItemInfoComponent } from './item-info/item-info.component';
+import { MatRippleModule } from "@angular/material/core";
 
 
 @NgModule({
@@ -16,12 +17,14 @@ import { ItemInfoComponent } from './item-info/item-info.component';
   exports: [
     MainComponent,
     CategoriesComponent,
-    MaterialModule
+    MaterialModule,
+    MatRippleModule
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatRippleModule
   ]
 })
 export class DashboardModule { }

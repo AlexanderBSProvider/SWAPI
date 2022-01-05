@@ -1,11 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-// import { ItemInfoComponent } from './item-info/item-info.component';
-import {RouterModule} from "@angular/router";
-import {ItemsRoutingModule} from "./items-routing.module";
-import {MainComponent} from "../dashboard/main/main.component";
-import {CategoriesComponent} from "../dashboard/categories/categories.component";
-import {MaterialModule} from "../shared/material/material.module";
+import { ItemsRoutingModule } from "./items-routing.module";
+import { MaterialModule } from "../shared/material/material.module";
 import { PeopleComponent } from './people/people.component';
 import { PlanetsComponent } from './planets/planets.component';
 import { FilmsComponent } from './films/films.component';
@@ -17,8 +13,6 @@ import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
-    // ItemInfoComponent
-
     PeopleComponent,
     PlanetsComponent,
     FilmsComponent,
@@ -33,7 +27,6 @@ import { MatRippleModule } from '@angular/material/core';
     MatRippleModule
   ],
   exports: [
-    // ItemInfoComponent,
     MaterialModule,
     MatCardModule,
     MatRippleModule

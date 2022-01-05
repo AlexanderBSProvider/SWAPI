@@ -1,6 +1,7 @@
 <div class="species-container">
 
   <div class="species-container-content">
+
     <ng-container *ngFor="let item of ((speciesInfo | async) | keyvalue); index as i">
 
       <ng-container *ngIf="item.key !== 'films' && item.key !== 'people' && item.key !== 'homeworld' && item.key !== 'url'">
@@ -43,5 +44,7 @@
       </ng-container>
 
     </ng-container>
+
   </div>
+
 </div>

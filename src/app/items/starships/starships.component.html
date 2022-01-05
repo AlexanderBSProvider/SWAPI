@@ -1,6 +1,7 @@
 <div class="starships-container">
 
   <div class="starships-container-content">
+
     <ng-container *ngFor="let item of ((starshipsInfo | async) | keyvalue); index as i">
 
       <ng-container *ngIf="item.key !== 'films' && item.key !== 'pilots' && item.key !== 'url'">
@@ -32,7 +33,8 @@
         <div class="separator"></div>
       </ng-container>
 
-  </ng-container>
+    </ng-container>
 
   </div>
+
 </div>

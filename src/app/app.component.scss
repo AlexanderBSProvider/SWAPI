@@ -1,19 +1,13 @@
 .app-container {
-  //height: 900px;
-  //height: 100vh;
-  //height: 100%;
   min-height: 100%;
   width: 100%;
-  //overflow: auto;
-  //background: rgb(2,0,36);
-  //background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(32,32,88,1) 28%, rgba(0,212,255,1) 100%);
   background-image: url(../assets/images/spacemain2.jpeg);
   display: flex;
   flex-direction: column;
+  //font-family: Death Star;
 
   &-button {
-    //height: 100%;
-    margin-top: 5px;
+    margin-top: 20px;
     width: 200px;
     height: 40px;
     background-color: black;
@@ -30,10 +24,5 @@
   }
 
   &-content {
-    //height: 100vh;
-    //height: 100%;
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: space-between;
   }
 }
