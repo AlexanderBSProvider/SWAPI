@@ -92,7 +92,6 @@ export class PeopleComponent implements OnInit {
       }
 
       this.planetsInfo = planetInfo;
-      console.log('planetsInfo',this.planetsInfo);
     });
   }
 
