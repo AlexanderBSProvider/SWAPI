@@ -15,9 +15,7 @@ export class ItemDataService {
   constructor(private http: HttpClient) {}
 
   getItemInfo(name: string, params: any = '') {
-    console.log(this.itemInfo$, 'itemInfo$')
     return  this.http.get<{count: number, next: string | null, previous: string | null , results: any}>(`${this.apiUrl}${name}${params}`)
       .pipe(tap((data) =>{ this.itemInfo$.next(data)} ));
-
   }
 }

@@ -1,8 +1,10 @@
 <div class="categories-container">
+
   <div class="categories-container-content">
+
     <div class="categories-container-content-category" *ngFor="let item of (categoryInfo | async)?.results; index as i">
 
-      <div class="categories-container-content-category-title" [routerLink]="[getIndexFromUrl(item.url)]">
+      <div class="categories-container-content-category-title" [routerLink]="[getIndexFromUrl(item.url)]" matRipple matRippleColor = #ffffff6b>
         <ng-container *ngIf="isFilms(item); else notAFilm">
           {{ item.title }}
         </ng-container>
@@ -13,6 +15,7 @@
     </div>
 
   </div>
+
   <div class="categories-container-paginator">
     <mat-paginator [length]="(categoryInfo | async)?.count"
                    [pageSize]= 10
@@ -26,4 +29,5 @@
                    >
     </mat-paginator>
   </div>
+
 </div>

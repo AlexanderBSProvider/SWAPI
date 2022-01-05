@@ -65,7 +65,7 @@ export class VehiclesComponent implements OnInit {
         name: data.name,
         number: linkId,
       }
-      console.log(peopleInfo,'peopleInfo')
+
       this.peopleInfo.push(peopleInfo);
     });
   }

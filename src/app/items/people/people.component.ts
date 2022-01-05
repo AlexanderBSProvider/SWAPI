@@ -97,6 +97,7 @@ export class PeopleComponent implements OnInit {
         name: data.name,
         number: linkId,
       }
+
       this.planetsInfo = planetInfo;
       console.log('planetsInfo',this.planetsInfo)
     });
@@ -112,6 +113,7 @@ export class PeopleComponent implements OnInit {
         name: data.name,
         number: linkId,
       }
+
       this.speciesInfo.push(specieInfo);
     });
   }

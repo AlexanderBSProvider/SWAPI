@@ -75,6 +75,7 @@ export class FilmsComponent implements OnInit {
         name: data.name,
         number: linkId,
       }
+
       this.planetsInfo.push(planetInfo);
     });
   }
