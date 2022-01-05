@@ -18,11 +18,14 @@
     align-items: center;
     align-self: center;
     cursor: pointer;
-
-    &-title{
-    }
   }
 
   &-content {
   }
+}
+
+@font-face
+{
+  font-family: DeathStar;
+  src: url('../assets/DeathStar.ttf');
 }
