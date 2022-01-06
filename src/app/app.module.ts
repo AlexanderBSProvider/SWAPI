@@ -8,21 +8,29 @@ import { AppComponent } from './app.component';
 import { ItemsModule } from "./items/items.module";
 import { MaterialModule } from "./shared/material/material.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginModule } from "./login/login.module";
+import { AppDeactivateGuard } from "./appDeactivate.guard";
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
+    LoginModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ItemsModule,
-    MaterialModule
+    MaterialModule,
+    // ReactiveFormsModule,
+    // FormsModule
   ],
-  providers: [],
+  providers: [AppDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

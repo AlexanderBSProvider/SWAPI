@@ -1,0 +1,24 @@
+.login-container {
+  //background-color: white;
+  //color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+
+  &-form {
+    background-color: white;
+    padding: 40px;
+
+    &-button {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &-field {
+
+    }
+  }
+}
