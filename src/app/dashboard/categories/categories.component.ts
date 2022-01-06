@@ -32,6 +32,7 @@ export class CategoriesComponent implements OnInit {
     this.urlParams = this.activatedRoute.snapshot.params['categoryName'];
 
     this.categoryDataService.getCategoryInfo(this.urlParams).subscribe();
+    console.log('jija')
   }
 
   loadPage(pageInfo: any) {
