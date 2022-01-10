@@ -1,7 +1,5 @@
 <div class="login-container">
   <form [formGroup]="authForm" novalidate (ngSubmit)="login()" class="login-container-form">
-
-<!--    <div class="login-container-form">-->
     <div class="login-container-form-field">
       <mat-form-field class="form-field">
         <mat-label>Email</mat-label>
@@ -23,30 +21,10 @@
     </div>
 
     <div class="login-container-form-button">
-      <button mat-raised-button color="" type="submit" [disabled]="authForm.invalid">Log In</button>
+      <button mat-raised-button color="" type="submit" [disabled]="authForm.invalid" (click)="showSnackbarMessage()">Log In</button>
     </div>
-
-
-<!--      <div class="alert-danger" *ngIf="authForm.controls['userEmail'].invalid && authForm.controls['userEmail'].touched">-->
-<!--        Invalid email-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="form-group">-->
-<!--      <label>Password</label>-->
-<!--      <input class="form-control" formControlName="userPassword" />-->
-
-<!--      <div class="alert-danger" *ngIf="authForm.controls['userPassword'].invalid && authForm.controls['userPassword'].touched">-->
-<!--        Password is too short-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="form-group">-->
-<!--      <button class="btn btn-default" [disabled]="authForm.invalid">-->
-<!--        Send-->
-<!--      </button>-->
-<!--    </div>-->
   </form>
+
   <div class="login-container-form-button">
     <button mat-raised-button color="" (click)="logout()" >Log Out</button>
   </div>
