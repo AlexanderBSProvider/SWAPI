@@ -1,6 +1,4 @@
 .login-container {
-  //background-color: white;
-  //color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +7,7 @@
 
   &-form {
     background-color: white;
-    padding: 40px;
+    padding: 40px 40px 15px 40px;
 
     &-button {
       margin-top: 10px;
@@ -18,7 +16,6 @@
     }
 
     &-field {
-
     }
   }
 }
